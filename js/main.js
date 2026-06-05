@@ -61,12 +61,24 @@ if (nav && !isGamePage) {
 
 const FORM_PAGE = "form.html";
 
-function goToFormPage() {
-  window.location.href = FORM_PAGE;
+function goToFormPage(menuKey, source) {
+  const url = new URL(FORM_PAGE, window.location.href);
+
+  if (menuKey) {
+    url.searchParams.set("menu", menuKey);
+  }
+
+  if (source) {
+    url.searchParams.set("source", source);
+  }
+
+  window.location.href = url.pathname + url.search;
 }
 
 document.querySelectorAll("#menuList [id$='Menu']").forEach((menu) => {
-  menu.addEventListener("click", goToFormPage);
+  menu.addEventListener("click", () => {
+    goToFormPage(menu.dataset.menu, "recommend");
+  });
 });
 
 const FORTUNE_COOKIE_PAGE = "fortuneCookie.html";

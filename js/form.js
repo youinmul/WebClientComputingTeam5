@@ -183,6 +183,7 @@ const sourceLabels = {
   tournament: "토너먼트",
   fortune: "포춘쿠키",
   guess: "음식 맞추기",
+  recommend: "메뉴 추천",
 };
 
 if (!form) {
