@@ -311,6 +311,8 @@
     line-height: 1.5;
     color: var(--color-text-muted);
     text-align: center;
+
+    height: 4rem;
 }
 
 .team-worker-link {
